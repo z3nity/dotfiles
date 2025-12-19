@@ -1,4 +1,4 @@
-@import url("/home/zen/.config/waybar/colors/colors.css");
+@import url("~/.config/waybar/colors/colors.css");
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
