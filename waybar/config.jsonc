@@ -1,0 +1,111 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top", 
+    "height": 32,
+    "width": 1920,
+    "spacing": 0,
+    "modules-left": [
+        "custom/notification",
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "battery",
+        "network",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": ""
+	},
+       "persistent-workspaces": {
+             "*": 5, // 5 workspaces by default on every monitor
+             "HDMI-A-1": 3 // but only three on HDMI-A-1
+       }
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time} {icon}",
+	"on-click": "com.github.d4nj1.tlpui",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  Network",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "  Network",
+        "on-click": "nm-connection-editor"
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "",
+        "inhibited-notification": "",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format" : "",
+		"tooltip": false,
+        "on-click": "wlogout"
+    },
+    "clock": {
+        "interval": 60,
+        "format": "  {:%I:%M %p}",
+        "max-length": 25
+}
+
+}
