@@ -46,6 +46,7 @@ window#waybar {
 }
 
 #clock,
+#custom-weather,
 #battery,
 #network,
 #custom-power,
@@ -56,6 +57,11 @@ window#waybar {
     background-color: @bg0;
     border-radius: 50px;
     margin: 11 5
+}
+
+#custom-weather {
+    transition: all 0.2s ease-in-out;
+    color: @grray
 }
 
 #tray {
