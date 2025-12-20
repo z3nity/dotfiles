@@ -7,7 +7,8 @@
     "spacing": 0,
     "modules-left": [
         "custom/notification",
-        "clock"
+        "clock",
+        "custom/weather"
     ],
     "modules-center": [
         "hyprland/workspaces"
