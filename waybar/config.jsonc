@@ -47,6 +47,13 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+	},
+	"custom/weather": {
+	     "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Berlin+Germany",
+	     "return-type": "json",
+	     "format": "{}",
+	     "tooltip": true,
+	     "interval": 3600
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
