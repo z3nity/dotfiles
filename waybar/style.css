@@ -61,7 +61,7 @@ window#waybar {
 
 #custom-weather {
     transition: all 0.2s ease-in-out;
-    color: @grray
+    color: @gray
 }
 
 #tray {
